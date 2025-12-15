@@ -11,14 +11,7 @@ function markdownToHTML(md) {
       .replace(/>/g, "&gt;");
 
     const html = `
-      <pre style="
-        background:#0d1117;
-        color:#c9d1d9;
-        padding:10px;
-        border-radius:6px;
-        overflow-x:auto;
-        font-size:13px;
-      "><code>${escaped}</code></pre>
+      <pre style="background:#0d1117;color:#c9d1d9;padding:10px;border-radius:6px;overflow-x:auto;font-size:13px;"><code>${escaped}</code></pre>
     `;
 
     codeBlocks.push(html);
@@ -27,10 +20,7 @@ function markdownToHTML(md) {
 
   // 1️⃣ Images
   md = md.replace(/!\[\s*\]\(([^)]+)\)/gim, (m, url) => `
-    <img src="${url}"
-      style="max-width:100%;height:auto;display:block;margin:8px 0;border-radius:6px;"
-      loading="lazy"
-    />
+    <img src="${url}" style="max-width:100%;height:auto;display:block;margin:8px 0;border-radius:6px;" loading="lazy"/>
   `);
 
   // 2️⃣ Headings
